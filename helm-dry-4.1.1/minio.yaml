@@ -353,7 +353,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: minio-operator-1623358372-console
+  name: minio-operator
   namespace: minio-operator
   labels:
     helm.sh/chart: minio-operator-4.1.1
