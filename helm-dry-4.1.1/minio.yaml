@@ -362,13 +362,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: minio-console
   template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: minio-console
     spec:
       serviceAccountName: console-sa
       containers:
@@ -401,13 +395,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: minio-operator
   template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: minio-operator
     spec:
       serviceAccountName: minio-operator
       securityContext:
