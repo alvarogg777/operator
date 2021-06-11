@@ -332,7 +332,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: "operator"
+  name: operator
   namespace: minio-operator
   labels:
     helm.sh/chart: minio-operator-4.1.1
@@ -353,7 +353,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: minio-operator
+  name: minio-console
   namespace: minio-operator
   labels:
     helm.sh/chart: minio-operator-4.1.1
@@ -372,7 +372,7 @@ spec:
     spec:
       serviceAccountName: console-sa
       containers:
-        - name: minio-operator
+        - name: minio-console
           image: "minio/console:v0.7.4"
           imagePullPolicy: IfNotPresent
           ports:
@@ -392,7 +392,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "minio-operator"
+  name: minio-operator
   namespace: minio-operator
   labels:
     helm.sh/chart: minio-operator-4.1.1
