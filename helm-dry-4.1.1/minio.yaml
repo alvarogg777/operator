@@ -12,10 +12,8 @@ metadata:
   name: minio-operator
   namespace: minio-operator
   labels:
-
     helm.sh/chart: minio-operator-4.1.1
     app.kubernetes.io/name: minio-operator
-    app.kubernetes.io/instance: minio-operator-1623358372
     app.kubernetes.io/version: "v4.1.1"
     app.kubernetes.io/managed-by: Helm
 ---
@@ -319,7 +317,6 @@ metadata:
   labels:
     helm.sh/chart: minio-operator-4.1.1
     app.kubernetes.io/name: minio-operator
-    app.kubernetes.io/instance: minio-operator-1623358372
     app.kubernetes.io/version: "v4.1.1"
     app.kubernetes.io/managed-by: Helm
 spec:
@@ -330,7 +327,6 @@ spec:
     port: 9443
   selector:
     app.kubernetes.io/name: minio-operator
-    app.kubernetes.io/instance: minio-operator-1623358372-console
 ---
 # Source: minio-operator/templates/operator-service.yaml
 apiVersion: v1
@@ -341,7 +337,6 @@ metadata:
   labels:
     helm.sh/chart: minio-operator-4.1.1
     app.kubernetes.io/name: minio-operator
-    app.kubernetes.io/instance: minio-operator-1623358372
     app.kubernetes.io/version: "v4.1.1"
     app.kubernetes.io/managed-by: Helm
 spec:
@@ -353,7 +348,6 @@ spec:
       name: https
   selector:
     app.kubernetes.io/name: minio-operator
-    app.kubernetes.io/instance: minio-operator-1623358372
 ---
 # Source: minio-operator/templates/console-deployment.yaml
 apiVersion: apps/v1
@@ -364,7 +358,6 @@ metadata:
   labels:
     helm.sh/chart: minio-operator-4.1.1
     app.kubernetes.io/name: minio-operator
-    app.kubernetes.io/instance: minio-operator-1623358372
     app.kubernetes.io/version: "v4.1.1"
     app.kubernetes.io/managed-by: Helm
 spec:
@@ -372,12 +365,10 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: minio-operator
-      app.kubernetes.io/instance: minio-operator-1623358372-console
   template:
     metadata:
       labels:
         app.kubernetes.io/name: minio-operator
-        app.kubernetes.io/instance: minio-operator-1623358372-console
     spec:
       serviceAccountName: console-sa
       containers:
@@ -406,7 +397,6 @@ metadata:
   labels:
     helm.sh/chart: minio-operator-4.1.1
     app.kubernetes.io/name: minio-operator
-    app.kubernetes.io/instance: minio-operator-1623358372
     app.kubernetes.io/version: "v4.1.1"
     app.kubernetes.io/managed-by: Helm
 spec:
@@ -414,12 +404,10 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: minio-operator
-      app.kubernetes.io/instance: minio-operator-1623358372
   template:
     metadata:
       labels:
         app.kubernetes.io/name: minio-operator
-        app.kubernetes.io/instance: minio-operator-1623358372
     spec:
       serviceAccountName: minio-operator
       securityContext:
